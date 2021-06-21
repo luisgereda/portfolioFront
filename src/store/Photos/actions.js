@@ -13,7 +13,6 @@ export const fetchPhotos = () => {
     try {
       const response = await axios.get(`${apiUrl}/spaces/photos`);
       dispatch(fetchedPhotos(response.data));
-      console.log(response);
     } catch (e) {
       console.log(e.message);
     }

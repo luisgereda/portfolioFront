@@ -38,12 +38,12 @@ export default function Home() {
           />
         ))}
       </div>
-      <div>
+      <div style={{ marginTop: 15 }}>
         <Link>
           <button>Explora Restaurantes</button>
         </Link>
-        <Link>
-          <button to={"/explore/paises"}>Explora Cocina en Casa</button>
+        <Link to={"/explore/paises"}>
+          <button>Explora Cocina en Casa</button>
         </Link>
       </div>
     </div>

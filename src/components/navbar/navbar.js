@@ -2,12 +2,11 @@ import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div style={{ marginBottom: 30, marginLeft: 30 }}>
+    <div style={{ marginBottom: 30, marginLeft: 30, marginRight: 30 }}>
       <NavLink
         to="/"
         exact
         to={"/"}
-        style={{ marginRight: 30 }}
         activeStyle={{ fontWeight: "bold", color: "blue" }}
       >
         Home
@@ -16,7 +15,6 @@ export default function Navbar() {
         to="/explore/restaurantes"
         exact
         to={"/explore/restaurantes"}
-        style={{ marginRight: 30 }}
         activeStyle={{ fontWeight: "bold", color: "blue" }}
       >
         Explora Restaurantes
@@ -25,7 +23,6 @@ export default function Navbar() {
         to="/explore/paises"
         exact
         to={"/explore/paises"}
-        style={{ marginRight: 30 }}
         activeStyle={{ fontWeight: "bold", color: "blue" }}
       >
         Explora Cocina en Casa
@@ -34,7 +31,6 @@ export default function Navbar() {
         to="/micuenta"
         exact
         to={"/mi cuenta"}
-        style={{ marginRight: 30 }}
         activeStyle={{ fontWeight: "bold", color: "blue" }}
       >
         Mi cuenta
@@ -43,7 +39,6 @@ export default function Navbar() {
         to="/login"
         exact
         to={"/Login"}
-        style={{ marginRight: 30 }}
         activeStyle={{ fontWeight: "bold", color: "blue" }}
       >
         Login

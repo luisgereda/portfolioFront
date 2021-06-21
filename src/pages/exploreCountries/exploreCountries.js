@@ -16,32 +16,26 @@ export default function Countries() {
   }, [dispatch]);
 
   const country = countries.find((country) => country.id === id);
-  //setCountry(findCountry);
-  // if (!findCountry) {
-  //   return null;
-  // } else {
-  //   setCountry(findCountry);
-  // }
-  // !findCountry ? "" : setCountry(findCountry);
 
-  console.log("findcountry", country);
+  // console.log("findcountry", country);
 
-  console.log("id", id);
+  // console.log("id", id);
 
   return (
     <div>
       <div>
-        {countries.map((country) => (
+        {countries.map((country, index) => (
           <button onClick={() => setId(country.id)}>
-            <Logos key={country.id} logo={country.logo} name={country.name} />
+            <Logos key={index} logo={country.logo} name={country.name} />
           </button>
         ))}
       </div>
       <div>
         {!country
           ? "loading"
-          : country.photos.map((photos) => (
+          : country.photos.map((photos, index) => (
               <PhotosCountry
+                key={index}
                 image={photos.imageUrl}
                 hearts={photos.hearts}
                 city={photos.city}
