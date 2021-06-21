@@ -2,9 +2,8 @@ const initialState = [];
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case "Restaurant/fetched":
-      return { ...state, ...action.payload };
-
+    case "countries/fetched":
+      return [...action.payload];
     default:
       return state;
   }
