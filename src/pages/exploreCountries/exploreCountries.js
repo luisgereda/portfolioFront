@@ -25,8 +25,8 @@ export default function Countries() {
     <div>
       <div>
         {countries.map((country, index) => (
-          <button onClick={() => setId(country.id)}>
-            <Logos key={index} logo={country.logo} name={country.name} />
+          <button onClick={() => setId(country.id)} key={index}>
+            <Logos logo={country.logo} name={country.name} />
           </button>
         ))}
       </div>

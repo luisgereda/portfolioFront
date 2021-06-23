@@ -1,6 +1,6 @@
 export default function PhotosHome(props) {
   return (
-    <button>
+    <div>
       <img src={props.imageUrl} alt={props.title} />
       <div>
         <h1>{props.rest}</h1>
@@ -10,6 +10,6 @@ export default function PhotosHome(props) {
       <h2>{props.hearts}</h2>
       <h1>{props.title}</h1>
       <h2>{props.description}</h2>
-    </button>
+    </div>
   );
 }
