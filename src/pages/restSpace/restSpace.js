@@ -6,6 +6,8 @@ import { selectRestaurant } from "../../store/restSpace/selectors";
 import PhotosHome from "../../components/photos/photos";
 import Reviews from "../../components/restSpace/reviews";
 import FormRest from "../../components/restSpace/formRes";
+import { myData } from "../../store/user/actions";
+import FormRestPhoto from "../../components/restSpace/formResPhoto";
 
 export default function RestSpace() {
   const dispatch = useDispatch();
@@ -14,6 +16,7 @@ export default function RestSpace() {
 
   useEffect(() => {
     dispatch(fetchRestSpace(id));
+    dispatch(myData());
   }, [dispatch, id]);
 
   return (
@@ -52,6 +55,7 @@ export default function RestSpace() {
         ))}
       </div>
       <FormRest></FormRest>
+      <FormRestPhoto />
     </div>
   );
 }

@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { postPhotoCountry } from "../../store/countrySpace/actions";
 
 export default function FormCountry() {
   const [title, setTitle] = useState("");
   const [description, setDecription] = useState("");
-  const [country, setCountry] = useState([]);
+  const [country, setCountry] = useState("");
   const [countries, setCountries] = useState([]);
-  const [cities, setCities] = useState([]);
+  const [city, setCities] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function GetCountries() {
@@ -21,6 +25,12 @@ export default function FormCountry() {
 
   const newPhoto = (event) => {
     event.preventDefault();
+    dispatch(postPhotoCountry(title, description, country, city, imageUrl));
+    setTitle("");
+    setDecription("");
+    setCountry("");
+    setCities("");
+    setImageUrl("");
   };
 
   const selectCountry = (event) => {
@@ -47,7 +57,7 @@ export default function FormCountry() {
           ))}
         </select>
         <label>City:</label>
-        <select onChange={selectCity} value={cities}>
+        <select onChange={selectCity} value={city}>
           {citiesOptions?.cities.map((city, index) => (
             <option value={city} key={index}>
               {city}
@@ -67,7 +77,11 @@ export default function FormCountry() {
           onChange={(event) => setDecription(event.target.value)}
         ></input>
         <label>Imagen</label>
-        <input type="text"></input>
+        <input
+          type="text"
+          value={imageUrl}
+          onChange={(event) => setImageUrl(event.target.value)}
+        ></input>
         <button type="submit">Enviar</button>
       </form>
     </div>

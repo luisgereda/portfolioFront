@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { selectPhotos } from "../../store/Photos/selectors";
@@ -22,24 +22,26 @@ export default function Home() {
 
       <div>
         {photos.map((photos) => (
-          <PhotosHome
-            key={photos.id}
-            imageUrl={photos.imageUrl}
-            rest={!photos.restSpace ? "" : photos.restSpace.name}
-            country={
-              photos.countrySpace
-                ? photos.countrySpace?.name
-                : photos.resSpace?.country
-            }
-            city={photos.restSpace ? photos.restSpace.city : photos.city}
-            hearts={photos.hearts}
-            title={photos.title}
-            description={photos.description}
-          />
+          <button>
+            <PhotosHome
+              key={photos.id}
+              imageUrl={photos.imageUrl}
+              rest={!photos.restSpace ? "" : photos.restSpace.name}
+              country={
+                photos.countrySpace
+                  ? photos.countrySpace?.name
+                  : photos.resSpace?.country
+              }
+              city={photos.restSpace ? photos.restSpace.city : photos.city}
+              hearts={photos.hearts}
+              title={photos.title}
+              description={photos.description}
+            />
+          </button>
         ))}
       </div>
       <div style={{ marginTop: 15 }}>
-        <Link>
+        <Link to={"explore/restaurantes"}>
           <button>Explora Restaurantes</button>
         </Link>
         <Link to={"/explore/paises"}>
