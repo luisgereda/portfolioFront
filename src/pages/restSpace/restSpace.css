@@ -1,0 +1,31 @@
+.photos {
+  display: flex;
+  justify-content: space-around;
+}
+
+.space {
+  color: red;
+}
+
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.send {
+  margin-left: 50%;
+}
+
+.forms {
+  display: inline-flex;
+  margin-right: 10px;
+}
+
+.send:hover {
+  background-color: #ff2600;
+}

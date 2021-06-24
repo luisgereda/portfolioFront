@@ -17,30 +17,32 @@ export default function Home() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="container">
       <h1 className="header">¡Bienvenidos a Este Pechito Come Peruano! </h1>
       <p>
         Busca tu restaurante favorito, comparte tus experiencias y sube fotos
       </p>
-      <div>
-        {photos.map((photos) => (
-          <button>
-            <PhotosHome
-              key={photos.id}
-              imageUrl={photos.imageUrl}
-              rest={!photos.restSpace ? "" : photos.restSpace.name}
-              country={
-                photos.countrySpace
-                  ? photos.countrySpace?.name
-                  : photos.resSpace?.country
-              }
-              city={photos.restSpace ? photos.restSpace.city : photos.city}
-              hearts={photos.hearts}
-              title={photos.title}
-              description={photos.description}
-            />
-          </button>
-        ))}
+      <div className="photos">
+        <div className="row">
+          {photos.map((photos) => (
+            <div className="col-md-6 col-lg-4">
+              <PhotosHome
+                key={photos.id}
+                imageUrl={photos.imageUrl}
+                rest={!photos.restSpace ? "" : photos.restSpace.name}
+                country={
+                  photos.countrySpace
+                    ? photos.countrySpace?.name
+                    : photos.restSpace?.country
+                }
+                city={photos.restSpace ? photos.restSpace.city : photos.city}
+                hearts={photos.hearts}
+                title={photos.title}
+                description={photos.description}
+              />
+            </div>
+          ))}
+        </div>
       </div>
       <div className="buttons">
         <Link to={"explore/restaurantes"}>

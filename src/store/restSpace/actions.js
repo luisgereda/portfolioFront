@@ -58,9 +58,10 @@ export const postReview = (title, review, date, imageUrl, stars) => {
   };
 };
 
-export const postPhoto = (title, description, imageUrl) => {
+export const postPhotoRest = (title, description, imageUrl) => {
   return async (dispatch, getState) => {
     try {
+      console.log("hola");
       const token = selectToken(getState());
       const userId = selectUserId(getState());
       const restSpaceId = selectRestaurantId(getState());
@@ -75,7 +76,7 @@ export const postPhoto = (title, description, imageUrl) => {
         }
       );
 
-      console.log(response3.data);
+      console.log("response", response3.data);
       dispatch(photoPosted(response3.data));
     } catch (e) {
       console.log(e);

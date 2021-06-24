@@ -1,15 +1,27 @@
+import "./photos.css";
+
 export default function PhotosHome(props) {
   return (
     <div>
-      <img src={props.imageUrl} alt={props.title} />
-      <div>
-        <h1>{props.rest}</h1>
-        <h1>{props.country}</h1>
-        <h1>{props.city}</h1>
+      <div className="card">
+        <div className="card-body">
+          <img
+            src={props.imageUrl}
+            alt={props.title}
+            className="card-img-top"
+          />
+          <div className="card-header">
+            <h1 className="card-title">{props.rest}</h1>
+            <h3 className="card-subtitle mb-3 text-primary">{props.country}</h3>
+            <h3 className="card-subtitle">{props.city}</h3>
+          </div>
+          {/* <h2>{props.hearts}</h2> */}
+          <div className="content">
+            <h5>{props.title}</h5>
+            <span className="card-text">{props.description}</span>
+          </div>
+        </div>
       </div>
-      <h2>{props.hearts}</h2>
-      <h1>{props.title}</h1>
-      <h2>{props.description}</h2>
     </div>
   );
 }

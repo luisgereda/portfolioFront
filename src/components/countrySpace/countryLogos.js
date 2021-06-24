@@ -1,3 +1,9 @@
+import "./logos.css";
+
 export default function Logos(props) {
-  return <img src={props.logo} alt={props.name} />;
+  return (
+    <div className="logos">
+      <img src={props.logo} alt={props.name} />
+    </div>
+  );
 }

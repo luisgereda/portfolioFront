@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { login } from "../../store/user/actions";
-import { selectToken } from "../../store/user/selector";
+import { selectToken, selectUserName } from "../../store/user/selector";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 
@@ -8,14 +8,14 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-  const token = useSelector(selectToken);
+  const user = useSelector(selectUserName);
   const history = useHistory();
 
-  // useEffect(() => {
-  //   if (token !== null) {
-  //     history.push("/");
-  //   }
-  // }, [token, history]);
+  useEffect(() => {
+    if (user !== null) {
+      history.push("/");
+    }
+  }, [user, history]);
 
   function submitForm(event) {
     event.preventDefault();

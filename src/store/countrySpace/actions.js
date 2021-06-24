@@ -11,9 +11,9 @@ const fetchedCountries = (countries) => {
   };
 };
 
-const photoPosted = (photo) => {
+const photoCountryPosted = (photo) => {
   return {
-    type: "photo/posted",
+    type: "photoCountry/posted",
     payload: photo,
   };
 };
@@ -69,8 +69,7 @@ export const postPhotoCountry = (
             headers: { Authorization: `Bearer ${token}` },
           }
         );
-        console.log(response3);
-        dispatch(photoPosted(response3.data));
+        dispatch(photoCountryPosted(response3.data));
       } else {
         const response3 = await axios.post(
           `${apiUrl}/country/photos`,
@@ -86,7 +85,6 @@ export const postPhotoCountry = (
             headers: { Authorization: `Bearer ${token}` },
           }
         );
-        console.log(response3);
         dispatch(countryCreated(response3.data));
       }
     } catch (e) {

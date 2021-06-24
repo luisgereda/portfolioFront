@@ -8,6 +8,7 @@ import Reviews from "../../components/restSpace/reviews";
 import FormRest from "../../components/restSpace/formRes";
 import { myData } from "../../store/user/actions";
 import FormRestPhoto from "../../components/restSpace/formResPhoto";
+import "./restSpace.css";
 
 export default function RestSpace() {
   const dispatch = useDispatch();
@@ -20,9 +21,9 @@ export default function RestSpace() {
   }, [dispatch, id]);
 
   return (
-    <div>
-      <h1>{restaurant.name}</h1>
-      <h2>
+    <div className="container">
+      <h1 className="space">{restaurant.name}</h1>
+      <h2 className="space">
         {restaurant.address} {restaurant.city} {restaurant.country}{" "}
         {restaurant.phone} {restaurant.website} {restaurant.openingH}
       </h2>
@@ -31,18 +32,26 @@ export default function RestSpace() {
           <h3 key={index}>{category.cuisine}</h3>
         ))}
       </div>
-      <div>
-        {restaurant.photos?.map((photo) => (
-          <PhotosHome
-            key={photo.id}
-            hearts={photo.hearts}
-            title={photo.title}
-            description={photo.description}
-            imageUrl={photo.imageUrl}
-          ></PhotosHome>
-        ))}
+      <div className="photos">
+        <div className="row">
+          {restaurant.photos?.map((photo) => (
+            <div className="col-md-6 col-lg-6">
+              <PhotosHome
+                key={photo.id}
+                hearts={photo.hearts}
+                title={photo.title}
+                description={photo.description}
+                imageUrl={photo.imageUrl}
+                rest={restaurant.name}
+              ></PhotosHome>
+            </div>
+          ))}
+        </div>
       </div>
       <div>
+        <h1 style={{ marginTop: 15 }} className="space">
+          {restaurant.reviews ? "" : "Lo que dicen nuestros chacales:"}
+        </h1>
         {restaurant.reviews?.map((review) => (
           <Reviews
             key={review.id}
@@ -51,11 +60,14 @@ export default function RestSpace() {
             starts={review.stars}
             date={review.date}
             review={review.review}
+            name={review.user?.name}
           />
         ))}
       </div>
-      <FormRest></FormRest>
-      <FormRestPhoto />
+      <div className="forms">
+        <FormRest></FormRest>
+        <FormRestPhoto />
+      </div>
     </div>
   );
 }

@@ -10,7 +10,6 @@ export default function FormCountry() {
   const [countries, setCountries] = useState([]);
   const [city, setCities] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [url, setUrl] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,7 +17,6 @@ export default function FormCountry() {
       const response = await axios.get(
         "https://countriesnow.space/api/v0.1/countries"
       );
-      console.log(response.data.data);
       setCountries(response.data.data);
     }
     GetCountries();
@@ -35,14 +33,13 @@ export default function FormCountry() {
         "https://api.cloudinary.com/v1_1/dyzzo8hq1/image/upload",
         data
       );
-      console.log(response2.data.url);
       setImageUrl(response2.data.url);
     } catch (e) {
       console.log(e);
     }
   }
 
-  const newReview = (event) => {
+  const newPhotoPosted = (event) => {
     event.preventDefault();
     dispatch(postPhotoCountry(title, description, country, city, imageUrl));
     setTitle("");
@@ -64,8 +61,24 @@ export default function FormCountry() {
 
   return (
     <div>
-      <h1>Comparte tus fotos con nosotros:</h1>
-      <form onSubmit={newReview}>
+      <h1 style={{ color: "red" }}>
+        Comparte tus fotos con nosotros tus fotos:
+      </h1>
+      <form onSubmit={newPhotoPosted}>
+        <label>Titulo:</label>
+        <input
+          type="text"
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+        ></input>
+        <label>Descripción:</label>
+        <input
+          type="text"
+          value={description}
+          onChange={(event) => setDecription(event.target.value)}
+        ></input>
+        <label>Imagen</label>
+        <input type="file" onChange={newPhoto}></input>
         <label>Pais:</label>
         <select onChange={selectCountry} value={country}>
           {countries?.map((country, index) => (
@@ -83,20 +96,6 @@ export default function FormCountry() {
             </option>
           ))}
         </select>
-        <label>Titulo:</label>
-        <input
-          type="text"
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
-        ></input>
-        <label>Descripción:</label>
-        <input
-          type="text"
-          value={description}
-          onChange={(event) => setDecription(event.target.value)}
-        ></input>
-        <label>Imagen</label>
-        <input type="file" onChange={newPhoto}></input>
         <button type="submit">Enviar</button>
       </form>
     </div>
