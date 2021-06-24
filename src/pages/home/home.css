@@ -1,0 +1,51 @@
+.header {
+  font-size: 50px;
+  text-align: center;
+  animation: blink 10s infinite;
+  -webkit-animation: blink 10s infinite;
+  color: red;
+}
+
+@keyframes blink {
+  0% {
+    color: #399926;
+  }
+  20% {
+    color: rgb(214, 253, 40);
+  }
+  40% {
+    color: rgb(248, 32, 4);
+  }
+  60% {
+    color: rgb(1, 48, 255);
+  }
+  80% {
+    color: rgba(255, 5, 5, 0.842);
+  }
+}
+
+p {
+  font-size: 30px;
+  text-align: center;
+  color: red;
+  animation: blink 10s infinite;
+  -webkit-animation: blink 10s infinite;
+}
+
+.buttons {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin-right: 10px;
+  border-radius: 50px;
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+}

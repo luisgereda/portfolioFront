@@ -10,6 +10,7 @@ export default function FormCountry() {
   const [countries, setCountries] = useState([]);
   const [city, setCities] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [url, setUrl] = useState("");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,7 +24,25 @@ export default function FormCountry() {
     GetCountries();
   }, []);
 
-  const newPhoto = (event) => {
+  async function newPhoto(event) {
+    const files = event.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "soqj5w68");
+    data.append("cloud_name", "dyzzo8hq1");
+    try {
+      const response2 = await axios.post(
+        "https://api.cloudinary.com/v1_1/dyzzo8hq1/image/upload",
+        data
+      );
+      console.log(response2.data.url);
+      setImageUrl(response2.data.url);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  const newReview = (event) => {
     event.preventDefault();
     dispatch(postPhotoCountry(title, description, country, city, imageUrl));
     setTitle("");
@@ -46,7 +65,7 @@ export default function FormCountry() {
   return (
     <div>
       <h1>Comparte tus fotos con nosotros:</h1>
-      <form onSubmit={newPhoto}>
+      <form onSubmit={newReview}>
         <label>Pais:</label>
         <select onChange={selectCountry} value={country}>
           {countries?.map((country, index) => (
@@ -77,11 +96,7 @@ export default function FormCountry() {
           onChange={(event) => setDecription(event.target.value)}
         ></input>
         <label>Imagen</label>
-        <input
-          type="text"
-          value={imageUrl}
-          onChange={(event) => setImageUrl(event.target.value)}
-        ></input>
+        <input type="file" onChange={newPhoto}></input>
         <button type="submit">Enviar</button>
       </form>
     </div>

@@ -1,39 +1,46 @@
 import { NavLink } from "react-router-dom";
+import "./navbar.css";
 
 export default function Navbar() {
   return (
-    <div style={{ marginBottom: 30, marginLeft: 30 }}>
+    <div className="navbar">
+      <img
+        src="https://res.cloudinary.com/dyzzo8hq1/image/upload/v1624529209/logo_circular_bldtpz.png"
+        alt="Este pechito come peruano"
+        className="logo-navbar"
+      ></img>
       <NavLink
+        className="navlink"
+        exact
         to="/"
-        style={{ marginRight: 30 }}
         activeStyle={{ fontWeight: "bold", color: "blue" }}
       >
         Home
       </NavLink>
       <NavLink
+        className="navlink"
         to="/explore/restaurantes"
-        style={{ marginRight: 30 }}
         activeStyle={{ fontWeight: "bold", color: "blue" }}
       >
         Explora Restaurantes
       </NavLink>
       <NavLink
+        className="navlink"
         to="/explore/paises"
-        style={{ marginRight: 30 }}
         activeStyle={{ fontWeight: "bold", color: "blue" }}
       >
         Explora Cocina en Casa
       </NavLink>
       <NavLink
+        className="navlink"
         to="/micuenta"
-        style={{ marginRight: 30 }}
         activeStyle={{ fontWeight: "bold", color: "blue" }}
       >
         Mi cuenta
       </NavLink>
       <NavLink
+        className="navlink"
         to="/login"
-        style={{ marginRight: 30 }}
         activeStyle={{ fontWeight: "bold", color: "blue" }}
       >
         Login
