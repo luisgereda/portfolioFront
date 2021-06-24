@@ -1,13 +1,18 @@
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
+import { useSelector, useDispatch } from "react-redux";
+import { selectUserName } from "../../store/user/selector";
+import { logOut } from "../../store/user/actions";
 
 export default function Navbar() {
+  const name = useSelector(selectUserName);
+  const dispatch = useDispatch();
   return (
     <div className="navbar">
       <img
         src="https://res.cloudinary.com/dyzzo8hq1/image/upload/v1624529209/logo_circular_bldtpz.png"
         alt="Este pechito come peruano"
-        className="logo-navbar"
+        className="logo"
       ></img>
       <NavLink
         className="navlink"
@@ -38,13 +43,22 @@ export default function Navbar() {
       >
         Mi cuenta
       </NavLink>
-      <NavLink
-        className="navlink"
-        to="/login"
-        activeStyle={{ fontWeight: "bold", color: "blue" }}
-      >
-        Login
-      </NavLink>
+      {name ? (
+        ((<h4 style={{ color: "white" }}>hola {name}</h4>),
+        (
+          <button className="logout" onClick={() => dispatch(logOut())}>
+            Logout
+          </button>
+        ))
+      ) : (
+        <NavLink
+          className="navlink"
+          to="/login"
+          activeStyle={{ fontWeight: "bold", color: "blue" }}
+        >
+          Login
+        </NavLink>
+      )}
     </div>
   );
 }

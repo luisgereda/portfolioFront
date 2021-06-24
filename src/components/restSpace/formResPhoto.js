@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { postPhoto } from "../../store/restSpace/actions";
+import { postPhotoRest } from "../../store/restSpace/actions";
 import axios from "axios";
 
 export default function FormRestPhoto() {
@@ -21,7 +21,7 @@ export default function FormRestPhoto() {
         "https://api.cloudinary.com/v1_1/dyzzo8hq1/image/upload",
         data
       );
-      console.log(response2.data.url);
+      // console.log(response2.data.url);
       setImageUrl(response2.data.url);
     } catch (e) {
       console.log(e);
@@ -30,7 +30,7 @@ export default function FormRestPhoto() {
 
   const submit = (event) => {
     event.preventDefault();
-    dispatch(postPhoto(title, description, imageUrl));
+    dispatch(postPhotoRest(title, description, imageUrl));
     setTitle("");
     setDescription("");
     setImageUrl("");
@@ -38,7 +38,7 @@ export default function FormRestPhoto() {
 
   return (
     <div>
-      <h1>Comparte tus photos con nosotros:</h1>
+      <h1 style={{ color: "red" }}>Comparte tus fotos:</h1>
       <form onSubmit={submit}>
         <label>Titulo:</label>
         <input
@@ -46,7 +46,7 @@ export default function FormRestPhoto() {
           value={title}
           onChange={(event) => setTitle(event.target.value)}
         ></input>
-        <label>Review:</label>
+        <label>Descripción:</label>
         <input
           type="text"
           value={description}
@@ -54,7 +54,9 @@ export default function FormRestPhoto() {
         ></input>
         <label>Foto: </label>
         <input type="file" onChange={newPhoto}></input>
-        <button type="submit">Enviar</button>
+        <button type="submit" className="send">
+          Enviar
+        </button>
       </form>
     </div>
   );

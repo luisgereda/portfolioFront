@@ -1,0 +1,8 @@
+.review {
+  border: solid black;
+}
+
+.content {
+  border: thin black;
+  background-color: rgba(104, 104, 104, 0.342);
+}

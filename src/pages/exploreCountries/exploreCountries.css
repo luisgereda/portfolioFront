@@ -1,0 +1,9 @@
+.photos {
+  display: flex;
+  align-content: center;
+}
+
+.logos {
+  display: flexbox;
+  justify-content: center;
+}
