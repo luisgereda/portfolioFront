@@ -1,0 +1,21 @@
+.navbar {
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  border-bottom: 1px solid black;
+  font-size: clamp(15px, 29px, 30px);
+  flex-wrap: wrap;
+}
+
+.logo-navbar {
+  width: 100px;
+  height: 100px;
+}
+
+.navlink {
+  color: white;
+  font-family: fantasy;
+}

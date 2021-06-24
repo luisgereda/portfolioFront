@@ -4,22 +4,24 @@ import { Link } from "react-router-dom";
 import { selectPhotos } from "../../store/Photos/selectors";
 import { fetchPhotos } from "../../store/Photos/actions";
 import PhotosHome from "../../components/photos/photos";
+import { fetchRestaurants } from "../../store/restaurants/actions";
+import "./home.css";
 
 export default function Home() {
-  const date = Date();
   const dispatch = useDispatch();
   const photos = useSelector(selectPhotos);
-  console.log(date);
 
   useEffect(() => {
     dispatch(fetchPhotos());
+    dispatch(fetchRestaurants());
   }, [dispatch]);
 
   return (
     <div>
-      <h1>hola, hoy es </h1>
-      {date}
-
+      <h1 className="header">¡Bienvenidos a Este Pechito Come Peruano! </h1>
+      <p>
+        Busca tu restaurante favorito, comparte tus experiencias y sube fotos
+      </p>
       <div>
         {photos.map((photos) => (
           <button>
@@ -40,7 +42,7 @@ export default function Home() {
           </button>
         ))}
       </div>
-      <div style={{ marginTop: 15 }}>
+      <div className="buttons">
         <Link to={"explore/restaurantes"}>
           <button>Explora Restaurantes</button>
         </Link>

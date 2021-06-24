@@ -1,4 +1,10 @@
+/* .MapContainer {
+  width: 1200px;
+  height: 200px;
+} */
+
 .leaflet-container {
-  width: auto;
-  height: auto;
+  width: 600px;
+  height: 400px;
+  margin-Left: 400px ;
 }

@@ -7,7 +7,7 @@ import RestSpace from "./pages/restSpace/restSpace";
 import Login from "./pages/login/login";
 import SignUp from "./pages/signup/signup";
 import MyAccount from "./pages/account/account";
-//import Restaurants from "../";
+import Restaurants from "../src/pages/exploreRest/exploreRest";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route path="/explore/restaurantes" component={Restaurants} />
         <Route path="/micuenta" component={MyAccount} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
