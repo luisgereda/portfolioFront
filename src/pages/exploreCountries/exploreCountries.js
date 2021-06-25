@@ -27,7 +27,8 @@ export default function Countries() {
             key={index}
             className="logos"
           >
-            <Logos logo={country.logo} name={country.name} />
+            {/* <Logos logo={country.logo} name={country.name} /> */}
+            {country.name}{" "}
           </button>
         ))}
       </div>
