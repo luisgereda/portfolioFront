@@ -10,7 +10,7 @@ export default (state = initialState, action) => {
     case "review/posted":
       return {
         ...state,
-        reviews: [...state.reviews, action.payload],
+        reviews: [action.payload, ...state.reviews],
       };
 
     case "photo/posted":

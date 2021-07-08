@@ -3,7 +3,9 @@ import { myData } from "../../store/user/actions";
 import { useEffect } from "react";
 import { selectPhotos, selectUser } from "../../store/user/selector";
 import PhotosHome from "../../components/photos/photos";
+import PhotosCountry from "../../components/countrySpace/countryphotos";
 import { deletePhoto } from "../../store/user/actions";
+import "./account.css";
 
 export default function MyAccount() {
   const dispatch = useDispatch();
@@ -17,17 +19,24 @@ export default function MyAccount() {
   return (
     <div className="container">
       {user.name ? (
-        <h1 style={{ color: "red" }}>Hola {user.name}</h1>
+        <h1 className="sub-header">Hola {user.name}</h1>
       ) : (
-        <h1 style={{ color: "red" }}>Hola loggeate para entrar a tu cuenta</h1>
+        <div className="header-account">
+          <h1 className="sub-header">Hola loggeate para entrar a tu cuenta</h1>
+          <img
+            src="https://res.cloudinary.com/dyzzo8hq1/image/upload/v1625770438/flecha_wwxcrb.png"
+            alt="flecha peru"
+            className="flecha"
+          ></img>
+        </div>
       )}
 
-      <div className="row">
+      <div className="wrapperHome">
         {photos?.map((photo, index) => (
-          <div className="col-md-6 col-lg-4">
-            <PhotosHome
+          <div>
+            <PhotosCountry
               key={index}
-              imageUrl={photo.imageUrl}
+              image={photo.imageUrl}
               title={photo.title}
               rest={!photo.restSpace ? "" : photo.restSpace.name}
               country={

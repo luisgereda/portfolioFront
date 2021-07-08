@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postReview } from "../../store/restSpace/actions";
+import StarRatingComponent from "react-star-rating-component";
 
 export default function FormRest() {
   const [title, setTitle] = useState("");
@@ -19,6 +20,8 @@ export default function FormRest() {
     setImage("");
     setStars("");
   };
+
+  console.log(stars);
 
   return (
     <div>
@@ -44,13 +47,19 @@ export default function FormRest() {
           placeholder="MM/YYYY"
         ></input>
         <label>Puntuación: </label>
-        <input
+        <StarRatingComponent
+          name={"Stars"}
+          value={stars}
+          onStarClick={(nextValue, prevValue, name) => setStars(nextValue)}
+        />
+
+        {/* <input
           type="number"
           min={0}
           max={5}
           value={stars}
           onChange={(event) => setStars(event.target.value)}
-        ></input>
+        ></input> */}
         <div className="send">
           <button type="submit">Enviar</button>
         </div>

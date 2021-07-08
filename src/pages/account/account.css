@@ -1,0 +1,27 @@
+.header-account {
+  display: flex;
+  justify-content: center;
+}
+
+.flecha {
+  position: absolute;
+  top: 40px;
+  left: 850px;
+  width: 500px;
+  animation: drop 2s ease forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes drop {
+  0% {
+  }
+  30% {
+    transform: translateY(50px);
+  }
+  60% {
+    transform: translateY(40px);
+  }
+  90% {
+    transform: translate(50px);
+  }
+}

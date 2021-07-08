@@ -3,7 +3,6 @@ import { fetchRestSpace } from "../../store/restSpace/actions";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { selectRestaurant } from "../../store/restSpace/selectors";
-import PhotosHome from "../../components/photos/photos";
 import Reviews from "../../components/restSpace/reviews";
 import FormRest from "../../components/restSpace/formRes";
 import { myData } from "../../store/user/actions";
@@ -68,14 +67,16 @@ export default function RestSpace() {
         <div className="wrapperHome">
           <div className="review-body">
             <h1>
-              {!restaurant.reviews ? " " : "Lo que dicen nuestros chacales:"}
+              {restaurant.reviews === []
+                ? " "
+                : "Lo que dicen nuestros chacales:"}
             </h1>
             {restaurant.reviews?.map((review) => (
               <Reviews
                 key={review.id}
                 title={review.title}
                 photo={review.photo}
-                starts={review.stars}
+                stars={review.stars}
                 date={review.date}
                 review={review.review}
                 name={review.user?.name}
