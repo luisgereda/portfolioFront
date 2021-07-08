@@ -6,9 +6,9 @@ import { postPhotoCountry } from "../../store/countrySpace/actions";
 export default function FormCountry() {
   const [title, setTitle] = useState("");
   const [description, setDecription] = useState("");
-  const [country, setCountry] = useState("");
+  const [country, setCountry] = useState("Peru");
   const [countries, setCountries] = useState([]);
-  const [city, setCities] = useState("");
+  const [city, setCities] = useState("Lima");
   const [imageUrl, setImageUrl] = useState("");
   const dispatch = useDispatch();
 
@@ -60,25 +60,25 @@ export default function FormCountry() {
   };
 
   return (
-    <div>
-      <h1 style={{ color: "red" }}>
-        Comparte tus fotos con nosotros tus fotos:
-      </h1>
+    <div className="form-container">
+      <h1 className="form-header">Comparte tus fotos con nosotros:</h1>
       <form onSubmit={newPhotoPosted}>
         <label>Titulo:</label>
         <input
           type="text"
           value={title}
           onChange={(event) => setTitle(event.target.value)}
+          required
         ></input>
         <label>Descripción:</label>
         <input
           type="text"
           value={description}
           onChange={(event) => setDecription(event.target.value)}
+          required
         ></input>
         <label>Imagen</label>
-        <input type="file" onChange={newPhoto}></input>
+        <input type="file" onChange={newPhoto} required></input>
         <label>Pais:</label>
         <select onChange={selectCountry} value={country}>
           {countries?.map((country, index) => (

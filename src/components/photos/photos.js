@@ -1,5 +1,3 @@
-import "./photos.css";
-
 export default function PhotosHome(props) {
   return (
     <div>

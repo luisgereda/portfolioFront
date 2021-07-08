@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { selectPhotos, selectUser } from "../../store/user/selector";
 import PhotosHome from "../../components/photos/photos";
 import { deletePhoto } from "../../store/user/actions";
-import "./account.css";
 
 export default function MyAccount() {
   const dispatch = useDispatch();

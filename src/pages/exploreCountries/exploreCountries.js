@@ -19,25 +19,29 @@ export default function Countries() {
   const country = countries.find((country) => country.id === id);
 
   return (
-    <div className="container">
-      <div>
-        {countries.map((country, index) => (
-          <button
-            onClick={() => setId(country.id)}
-            key={index}
-            className="logos"
-          >
-            {/* <Logos logo={country.logo} name={country.name} /> */}
-            {country.name}{" "}
-          </button>
-        ))}
+    <div>
+      <div className="logos">
+        {countries.map((country, index) => {
+          return (
+            <div>
+              <button
+                className="logo-click"
+                onClick={() => setId(country.id)}
+                key={index}
+              >
+                <Logos logo={country.logo} name={country.name} />
+              </button>
+              <p className="country-name">{country.name}</p>
+            </div>
+          );
+        })}
       </div>
-      <div className="photos">
-        <div className="row">
-          {!country
-            ? "loading"
-            : country.photos.map((photos, index) => (
-                <div className="col-md-6 col-lg-4">
+      <div>
+        <div className="home-container">
+          <div className="wrapperHome">
+            {!country
+              ? "loading"
+              : country.photos.map((photos, index) => (
                   <PhotosCountry
                     key={index}
                     image={photos.imageUrl}
@@ -48,8 +52,8 @@ export default function Countries() {
                     name={photos.photos?.name}
                     date={photos.createdAt}
                   ></PhotosCountry>
-                </div>
-              ))}
+                ))}
+          </div>
         </div>
       </div>
       <div>

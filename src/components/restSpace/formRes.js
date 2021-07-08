@@ -22,7 +22,7 @@ export default function FormRest() {
 
   return (
     <div>
-      <h1 style={{ color: "red" }}>Comparte tu experiencia:</h1>
+      <h1>Comparte tu experiencia:</h1>
       <form onSubmit={newReview}>
         <label>Titulo:</label>
         <input
@@ -43,12 +43,6 @@ export default function FormRest() {
           onChange={(event) => setDate(event.target.value)}
           placeholder="MM/YYYY"
         ></input>
-        {/* <label>Foto: </label> */}
-        {/* <input
-          type="string"
-          value={imageUrl}
-          onChange={(event) => setImage(event.target.value)}
-        ></input> */}
         <label>Puntuación: </label>
         <input
           type="number"
@@ -57,9 +51,9 @@ export default function FormRest() {
           value={stars}
           onChange={(event) => setStars(event.target.value)}
         ></input>
-        <button type="submit" className="send">
-          Enviar
-        </button>
+        <div className="send">
+          <button type="submit">Enviar</button>
+        </div>
       </form>
     </div>
   );

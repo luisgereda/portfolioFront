@@ -24,7 +24,7 @@
   }
 }
 
-p {
+.sub-header {
   font-size: 30px;
   text-align: center;
   color: red;
@@ -32,25 +32,61 @@ p {
   -webkit-animation: blink 10s infinite;
 }
 
+.home-container {
+  width: 100%;
+}
+
+.wrapperHome {
+  margin: 15px;
+  display: flex;
+  padding: 2px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.photo-card {
+  max-width: 360px;
+  margin-top: 10px;
+}
+
+.header-card {
+  justify-content: center;
+}
+
+.footer-card {
+  flex-grow: 1;
+  background-color: red;
+}
+
 .buttons {
   margin-top: 15px;
   margin-bottom: 15px;
   align-items: center;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
 }
 
 button {
-  margin-right: 10px;
   border-radius: 50px;
-  background-color: green;
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 0, 0);
   font-size: 20px;
   padding: 20px;
+  border: outset;
+  transition-duration: 0.3s;
 }
 
 .photos {
   display: flex;
   align-content: center;
+}
+
+button:hover {
+  background-color: #ff0000;
+  color: rgb(231, 231, 231);
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: red inset 3px;
+  opacity: 0.6;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

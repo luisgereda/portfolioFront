@@ -38,7 +38,7 @@ export default function FormRestPhoto() {
 
   return (
     <div>
-      <h1 style={{ color: "red" }}>Comparte tus fotos:</h1>
+      <h1>Comparte tus fotos:</h1>
       <form onSubmit={submit}>
         <label>Titulo:</label>
         <input
@@ -54,9 +54,9 @@ export default function FormRestPhoto() {
         ></input>
         <label>Foto: </label>
         <input type="file" onChange={newPhoto}></input>
-        <button type="submit" className="send">
-          Enviar
-        </button>
+        <div className="send">
+          <button type="submit">Enviar</button>
+        </div>
       </form>
     </div>
   );

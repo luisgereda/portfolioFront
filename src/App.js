@@ -11,16 +11,18 @@ import Restaurants from "../src/pages/exploreRest/exploreRest";
 
 function App() {
   return (
-    <div>
-      <NavBar />
+    <div className="App">
+      <header>
+        <NavBar />
+      </header>
       <Switch>
-        <Route exact path="/" component={Home} />
         <Route path="/explore/restaurantes" component={Restaurants} />
         <Route path="/micuenta" component={MyAccount} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
         <Route path="/explore/paises" component={Countries} />
         <Route path="/restaurants/:id" component={RestSpace} />
+        <Route exact path="/" component={Home} />
       </Switch>
     </div>
   );

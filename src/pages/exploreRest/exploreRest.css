@@ -1,10 +1,39 @@
-/* .MapContainer {
-  width: 1200px;
-  height: 200px;
-} */
+.explore {
+  background-color: unset;
+  text-align: center;
+  border: unset;
+  padding: 5px;
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
 
 .leaflet-container {
   width: 600px;
   height: 400px;
-  margin-Left: 400px ;
+}
+
+.geosearch {
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+}
+.results {
+  background-color: white;
+}
+
+/* form {
+  display: flex;
+  flex-flow: row-reverse;
+} */
+
+a.reset {
+  display: none;
+}
+
+.leaflet-bar-part.leaflet-bar-part-single {
+  display: none;
 }

@@ -1508,11 +1508,6 @@
     "schema-utils" "^2.6.5"
     "source-map" "^0.7.3"
 
-"@popperjs/core@^2.9.2":
-  "integrity" "sha512-VZMYa7+fXHdwIq1TDhSXoVmSPEGM/aa+6Aiq3nVVJ9bXr24zScr+NlKFKC3iPljA7ho/GAZr+d2jOf5GIRC30Q=="
-  "resolved" "https://registry.npmjs.org/@popperjs/core/-/core-2.9.2.tgz"
-  "version" "2.9.2"
-
 "@react-leaflet/core@^1.0.2", "@react-leaflet/core@>=1.0.0 <1.1.0 || ^1.1.1":
   "integrity" "sha512-QbleYZTMcgujAEyWGki8Lx6cXQqWkNtQlqf5c7NImlIp8bKW66bFpez/6EVatW7+p9WKBOEOVci/9W7WW70EZg=="
   "resolved" "https://registry.npmjs.org/@react-leaflet/core/-/core-1.0.2.tgz"
@@ -7332,7 +7327,14 @@
     "lodash" "^4.17.5"
     "webpack-sources" "^1.1.0"
 
-"leaflet@^1.7.1":
+"leaflet-geosearch@^3.3.2":
+  "integrity" "sha512-Kb3NCiG0xWxadRJ0FyNOhFlpN0VT33l1zSpBfWPob6fUfN9bCg6d3XyWTa6KBIQrVRjg30Sp0Cnn+jJWRiFPDA=="
+  "resolved" "https://registry.npmjs.org/leaflet-geosearch/-/leaflet-geosearch-3.3.2.tgz"
+  "version" "3.3.2"
+  optionalDependencies:
+    "leaflet" "^1.6.0"
+
+"leaflet@^1.6.0", "leaflet@^1.7.1":
   "integrity" "sha512-/xwPEBidtg69Q3HlqPdU3DnrXQOvQU/CCHA1tcDQVzOwm91YMYaILjNp7L4Eaw5Z4sOYdbBz6koWyibppd8Zqw=="
   "resolved" "https://registry.npmjs.org/leaflet/-/leaflet-1.7.1.tgz"
   "version" "1.7.1"
@@ -11585,11 +11587,6 @@
   "integrity" "sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c="
   "resolved" "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
   "version" "0.0.6"
-
-"typescript@^3.2.1 || ^4", "typescript@>=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta":
-  "integrity" "sha512-uauPG7XZn9F/mo+7MrsRjyvbxFpzemRjKEZXS4AK83oP2KKOJPvb+9cO/gmnv8arWZvhnjVOXz7B49m1l0e9Ew=="
-  "resolved" "https://registry.npmjs.org/typescript/-/typescript-4.3.4.tgz"
-  "version" "4.3.4"
 
 "unbox-primitive@^1.0.1":
   "integrity" "sha512-tZU/3NqK3dA5gpE1KtyiJUrEB0lxnGkMFHptJ7q6ewdZ8s12QrODwNbhIJStmJkd1QDXa1NRA8aF2A1zk/Ypyw=="
