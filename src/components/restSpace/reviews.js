@@ -7,7 +7,7 @@ export default function Reviews(props) {
       <div className="content">
         <h2>{props.review}</h2>
       </div>
-      <StarRatingComponent name={"Stars"} value={props.stars} />
+      <StarRatingComponent name={"Stars"} value={props.stars} editing={false} />
       <h2>{props.name}</h2>
       <h2>Date of visit: {props.date}</h2>
     </div>

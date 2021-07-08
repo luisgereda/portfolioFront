@@ -41,7 +41,7 @@ export default function Countries() {
           <div className="wrapperHome">
             {!country
               ? "loading"
-              : country.photos.map((photos, index) => (
+              : country.photos?.map((photos, index) => (
                   <PhotosCountry
                     key={index}
                     image={photos.imageUrl}

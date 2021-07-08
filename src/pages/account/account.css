@@ -8,7 +8,7 @@
   top: 40px;
   left: 850px;
   width: 500px;
-  animation: drop 2s ease forwards;
+  animation: drop 2s ease;
   animation-iteration-count: infinite;
 }
 

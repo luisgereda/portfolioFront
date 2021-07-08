@@ -47,7 +47,7 @@ export default function Home() {
       <div className="buttons">
         <button
           onClick={(e) => {
-            dispatch(fetchPhotos);
+            dispatch(fetchPhotos());
           }}
         >
           Mira mas (total:{total})
