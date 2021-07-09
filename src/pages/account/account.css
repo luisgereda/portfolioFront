@@ -6,18 +6,18 @@
 .flecha {
   position: absolute;
   top: 40px;
-  left: 850px;
+  left: 920px;
   width: 500px;
-  animation: drop 0.8s ease;
+  animation: drop 2s ease;
   animation-iteration-count: infinite;
 }
 
 @keyframes drop {
   30% {
-    transform: rotate(-15deg);
+    transform: rotate(-10deg);
   }
   60% {
-    transform: rotate(15deg);
+    transform: rotate(10deg);
   }
   100% {
     transform: rotate(0);

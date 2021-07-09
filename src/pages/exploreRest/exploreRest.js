@@ -41,12 +41,14 @@ export default function Restaurants() {
 
   return (
     <div>
-      <header className="explore">
+      <div className="header-explore">
         <h1>Encuentra tu restaurante favorito:</h1>
+        <br />
         <button onClick={(e) => setShowSearch(!showSearch)} value={showSearch}>
           Has click aqui para buscar tu ciudad favorita
         </button>
-      </header>
+      </div>
+
       <div className="map">
         <MapContainer
           center={[52.37243, 4.89973]}

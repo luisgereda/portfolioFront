@@ -14,7 +14,7 @@ header {
   display: flex;
   width: 100%;
   height: 100%;
-  justify-content: space-evenly;
+  justify-content: space-around;
   text-align: center;
   align-items: center;
   flex-wrap: wrap;
@@ -25,6 +25,7 @@ header {
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
+  flex-grow: 1;
 }
 
 .navbar li {

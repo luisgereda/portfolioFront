@@ -1,8 +1,10 @@
-.explore {
+.header-explore {
+  width: 100%;
   background-color: unset;
   text-align: center;
   border: unset;
   padding: 5px;
+  color: red;
 }
 
 .map {
