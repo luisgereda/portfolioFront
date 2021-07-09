@@ -22,7 +22,6 @@ export const fetchPhotos = () => {
       const response = await axios.get(
         `${apiUrl}/spaces/photos?offset=${offset}&limit=12`
       );
-      console.log(response.data);
       dispatch(fetchedPhotos(response.data.images));
       dispatch(totalPhotos(response.data.total));
     } catch (e) {

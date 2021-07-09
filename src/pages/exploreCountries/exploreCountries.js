@@ -23,7 +23,7 @@ export default function Countries() {
       <div className="logos">
         {countries.map((country, index) => {
           return (
-            <div>
+            <div key={index}>
               <button
                 className="logo-click"
                 onClick={() => setId(country.id)}

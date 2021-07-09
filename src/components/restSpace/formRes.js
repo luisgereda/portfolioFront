@@ -8,7 +8,7 @@ export default function FormRest() {
   const [review, setReview] = useState("");
   const [date, setDate] = useState("");
   const [imageUrl, setImage] = useState("");
-  const [stars, setStars] = useState("");
+  const [stars, setStars] = useState(0);
   const dispatch = useDispatch();
 
   const newReview = (event) => {
@@ -20,8 +20,6 @@ export default function FormRest() {
     setImage("");
     setStars("");
   };
-
-  console.log(stars);
 
   return (
     <div>

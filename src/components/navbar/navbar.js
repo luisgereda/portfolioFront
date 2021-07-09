@@ -9,11 +9,16 @@ export default function Navbar() {
   const dispatch = useDispatch();
   return (
     <nav className="navbar">
-      <img
-        src="https://res.cloudinary.com/dyzzo8hq1/image/upload/v1624529209/logo_circular_bldtpz.png"
-        alt="Este pechito come peruano"
-        className="logo"
-      ></img>
+      <a
+        href="https://www.instagram.com/este.pechito.come.peruano/"
+        target="_blank"
+      >
+        <img
+          src="https://res.cloudinary.com/dyzzo8hq1/image/upload/v1624529209/logo_circular_bldtpz.png"
+          alt="Este pechito come peruano"
+          className="logo"
+        ></img>
+      </a>
       <ul>
         <li>
           <NavLink
