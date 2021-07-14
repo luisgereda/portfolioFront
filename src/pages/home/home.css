@@ -45,12 +45,19 @@
 }
 
 .photo-card {
-  max-width: 360px;
+  width: 300px;
   margin-top: 10px;
+  border: ridge red 2px;
+  border-radius: 10px;
+  text-align: center;
+  flex-direction: column;
+  color: white;
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
 
 .header-card {
-  justify-content: center;
+  height: 200px;
 }
 
 .footer-card {

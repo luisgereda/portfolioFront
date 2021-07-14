@@ -1,18 +1,33 @@
+import { Controlled as ControlledZoom } from "react-medium-image-zoom";
+import { useState } from "react";
+
 export default function PhotosCountry(props) {
   const dateArray = props.date;
   const date = new Date(dateArray);
   const dateCreated = date.toDateString();
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  const handleZoomChange = () => {
+    setIsZoomed(!isZoomed);
+  };
 
   return (
     <div className="photo-card">
       <span className="tooltiptext">¡Que rico!🤤 </span>
       <div className="header-card">
-        <img
-          className="photos-country"
-          src={props.image}
-          alt={props.description}
-        />
+        <ControlledZoom
+          isZoomed={isZoomed}
+          onZoomChange={handleZoomChange}
+          scrollableEl={false}
+        >
+          <img
+            className="photos-country"
+            src={props.image}
+            alt={props.description}
+          />
+        </ControlledZoom>
       </div>
+
       <div className="body-card">
         {/* <h1>{props.hearts}</h1> */}
         <h2>
@@ -34,9 +49,9 @@ export default function PhotosCountry(props) {
         </h3>
       </div>
       <div className="footer-card">
-        <h2>{props.description}</h2>
-        <h2>{dateCreated}</h2>
-        <h2>{props.name}</h2>
+        <h3>{props.description}</h3>
+        <h3>{dateCreated}</h3>
+        <h3>{props.name}</h3>
       </div>
     </div>
   );

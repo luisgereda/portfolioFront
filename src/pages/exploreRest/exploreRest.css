@@ -10,12 +10,13 @@
 .map {
   display: flex;
   justify-content: center;
-  margin: 5%;
+  margin: 50px;
+  height: 400px;
 }
 
 .leaflet-container {
   width: 600px;
-  height: 400px;
+  height: 100%;
 }
 
 .geosearch {
@@ -26,11 +27,6 @@
 .results {
   background-color: white;
 }
-
-/* form {
-  display: flex;
-  flex-flow: row-reverse;
-} */
 
 a.reset {
   display: none;

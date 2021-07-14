@@ -21,7 +21,7 @@ export default function FormRestPhoto() {
         "https://api.cloudinary.com/v1_1/dyzzo8hq1/image/upload",
         data
       );
-      // console.log(response2.data.url);
+      console.log(response2.data.url);
       setImageUrl(response2.data.url);
     } catch (e) {
       console.log(e);
