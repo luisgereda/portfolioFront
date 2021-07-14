@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRestSpace } from "../../store/restSpace/actions";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { selectRestaurant } from "../../store/restSpace/selectors";
@@ -8,6 +9,7 @@ import FormRest from "../../components/restSpace/formRes";
 import { myData } from "../../store/user/actions";
 import FormRestPhoto from "../../components/restSpace/formResPhoto";
 import PhotosCountry from "../../components/countrySpace/countryphotos";
+import { Icon } from "leaflet";
 import "./restSpace.css";
 
 export default function RestSpace() {
@@ -24,32 +26,36 @@ export default function RestSpace() {
   return (
     <div className="container">
       <div className="space">
-        <img src={restaurant.photo} alt={restaurant.name} />
-        <div className="detail">
-          <span>
-            <img
-              className="logo"
-              src={restaurant.logo}
-              alt={restaurant.name}
-            ></img>
-          </span>
-          <div>
-            <h1>{restaurant.name}</h1>
-            <h2>
-              {restaurant.address} {restaurant.city} {restaurant.country}
-              <br />
-              {restaurant.phone}
-              <br />
-              {restaurant.openingH}
-              <br />
-              <a href={`${restaurant.website}`} target="_blank">
-                Mira su pagina web
-              </a>
-            </h2>
+        <div className="rest-photo">
+          <img src={restaurant.photo} alt={restaurant.name} />
+        </div>
+        <div className="rest-space">
+          <div className="detail">
+            <span>
+              <img
+                className="logo"
+                src={restaurant.logo}
+                alt={restaurant.name}
+              ></img>
+            </span>
             <div>
-              {restaurant.categories?.map((category, index) => (
-                <h3 key={index}>{category.cuisine}</h3>
-              ))}
+              <h1>{restaurant.name}</h1>
+              <h2>
+                {restaurant.address} {restaurant.city} {restaurant.country}
+                <br />
+                {restaurant.phone}
+                <br />
+                {restaurant.openingH}
+                <br />
+                <a href={`${restaurant.website}`} target="_blank">
+                  Mira su pagina web
+                </a>
+              </h2>
+              <div>
+                {restaurant.categories?.map((category, index) => (
+                  <h3 key={index}>{category.cuisine}</h3>
+                ))}
+              </div>
             </div>
           </div>
         </div>

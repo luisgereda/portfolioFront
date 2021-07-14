@@ -3,20 +3,37 @@
   justify-content: space-around;
 }
 .container {
-  display: flex;
-  flex-flow: column;
-  align-content: center;
+  width: 100%;
 }
 
 .space {
   color: red;
-  margin: 0px 0px;
+  margin: 10px 0px;
   display: flex;
-  flex-flow: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-flow: column;
 }
+
+.rest-space {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(211, 211, 211, 0.555);
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.rest-photo {
+  border: black solid 1px;
+  padding: 2px;
+  display: flex;
+  margin-bottom: 30px;
+  max-width: 100%;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
 span .logo {
   height: 200px;
   width: 200px;
@@ -24,15 +41,26 @@ span .logo {
 }
 
 .space img {
-  max-width: 900px;
+  max-width: 100%;
   max-height: 600px;
 }
 
 .detail {
-  background-color: rgba(211, 211, 211, 0.555);
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.leaflet-container {
+  width: 600px;
+  height: 300px;
+}
+
+.map-space {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  height: 300px;
 }
 
 .show {
@@ -83,3 +111,9 @@ input {
   color: red;
   text-align: center;
 }
+
+/* @media screen and (max-width: 400px) {
+  .space {
+    flex-flow: column;
+  }
+} */

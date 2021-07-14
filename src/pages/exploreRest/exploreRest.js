@@ -6,6 +6,7 @@ import { fetchRestaurants } from "../../store/restaurants/actions";
 import { selectRestaurants } from "../../store/restaurants/selectors";
 import { Link } from "react-router-dom";
 import { GeoSearchControl, MapBoxProvider } from "leaflet-geosearch";
+import { Icon } from "leaflet";
 
 export default function Restaurants() {
   const dispatch = useDispatch();
@@ -15,6 +16,12 @@ export default function Restaurants() {
   useEffect(() => {
     dispatch(fetchRestaurants());
   }, [dispatch]);
+
+  const restIcon = new Icon({
+    iconUrl:
+      "https://res.cloudinary.com/dyzzo8hq1/image/upload/v1624529209/logo_circular_bldtpz.png",
+    iconSize: [60, 60],
+  });
 
   const SearchField = ({ apiKey }) => {
     const provider = new MapBoxProvider({
@@ -72,6 +79,7 @@ export default function Restaurants() {
               <Marker
                 key={restaurant.id}
                 position={[restaurant.latitude, restaurant.longitude]}
+                icon={restIcon}
               >
                 <Popup>
                   <Link to={`/restaurants/${restaurant.id}`}>

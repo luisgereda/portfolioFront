@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { myData } from "../../store/user/actions";
 import { useEffect } from "react";
 import { selectPhotos, selectUser } from "../../store/user/selector";
-import PhotosHome from "../../components/photos/photos";
 import PhotosCountry from "../../components/countrySpace/countryphotos";
 import { deletePhoto } from "../../store/user/actions";
 import "./account.css";
