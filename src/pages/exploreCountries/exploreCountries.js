@@ -49,7 +49,7 @@ export default function Countries() {
                     city={photos.city}
                     title={photos.title}
                     description={photos.description}
-                    name={photos.photos?.name}
+                    name={photos.user?.name}
                     date={photos.createdAt}
                   ></PhotosCountry>
                 ))}

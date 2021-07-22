@@ -1,5 +1,5 @@
 import { apiUrl } from "../../config/constants";
-import { selectToken } from "../user/selector";
+import { selectToken, selectUserId } from "../user/selector";
 import axios from "axios";
 
 const loginSuccess = (userWithToken) => {
@@ -19,6 +19,20 @@ const userData = (userdata) => {
 const photoDeleted = (id) => {
   return {
     type: "photo/deleted",
+    payload: id,
+  };
+};
+
+const addFavorite = (rest) => {
+  return {
+    type: "favorite/added",
+    payload: rest,
+  };
+};
+
+const removeFavorite = (id) => {
+  return {
+    type: "favorite/remove",
     payload: id,
   };
 };
@@ -79,6 +93,42 @@ export const deletePhoto = (id) => {
       });
       console.log("reponse", response);
       dispatch(photoDeleted(id));
+    } catch (e) {
+      console.log(e);
+    }
+  };
+};
+
+export const addFav = (id) => {
+  return async (dispatch, getState) => {
+    const token = selectToken(getState());
+    const userId = selectUserId(getState());
+    try {
+      const response = await axios.post(
+        `${apiUrl}/${userId}/${id}`,
+        { userId, id },
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
+      dispatch(addFavorite(response.data));
+    } catch (e) {
+      console.log(e);
+    }
+  };
+};
+
+export const deleteFav = (id) => {
+  return async (dispatch, getState) => {
+    const token = selectToken(getState());
+    const userId = selectUserId(getState());
+    try {
+      const response = await axios.delete(`${apiUrl}/${userId}/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      console.log(response.data);
+      dispatch(removeFavorite(id));
     } catch (e) {
       console.log(e);
     }
