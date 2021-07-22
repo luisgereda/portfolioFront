@@ -40,6 +40,7 @@ export default function Home() {
               title={photos.title}
               description={photos.description}
               date={photos.createdAt}
+              name={photos.user.name}
             />
           ))}
         </div>

@@ -23,3 +23,69 @@
     transform: rotate(0);
   }
 }
+
+.fav-cards {
+  display: flex;
+  width: 50%;
+  margin: 15px 0px;
+  align-items: center;
+  border: solid 1px red;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.fav-cards:hover {
+  border: solid 2px red;
+}
+
+.fav-details {
+  text-align: center;
+  flex-grow: 2;
+  padding: 1px;
+}
+
+.fav-details h1 {
+  margin: 1px 0px 5px 0px;
+}
+
+.fav-details p {
+  margin: 1px 0px 0px 0px;
+}
+
+.fav-bottom {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.fav-bottom a {
+  flex-grow: 1;
+}
+
+.card {
+  display: flex;
+  align-items: flex-end;
+}
+
+.remove {
+  justify-content: flex-end;
+}
+
+.remove:hover {
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .fav-cards {
+    width: 30%;
+  }
+}
+
+.entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.entry button {
+  max-width: 200px;
+}

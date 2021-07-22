@@ -91,7 +91,6 @@ button {
 button:hover {
   background-color: #ff0000;
   color: rgb(231, 231, 231);
-  font-size: 1.3rem;
   font-weight: bold;
   border: red inset 3px;
   opacity: 0.6;

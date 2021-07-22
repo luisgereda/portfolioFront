@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 import { selectRestaurant } from "../../store/restSpace/selectors";
 import Reviews from "../../components/restSpace/reviews";
 import FormRest from "../../components/restSpace/formRes";
-import { myData } from "../../store/user/actions";
+import { myData, addFav, deleteFav } from "../../store/user/actions";
+import { selecFav } from "../../store/user/selector";
 import FormRestPhoto from "../../components/restSpace/formResPhoto";
 import PhotosCountry from "../../components/countrySpace/countryphotos";
 import { Icon } from "leaflet";
@@ -17,6 +18,14 @@ export default function RestSpace() {
   const restaurant = useSelector(selectRestaurant);
   const { id } = useParams();
   const [show, setShow] = useState(true);
+  const favorites = useSelector(selecFav);
+
+  const isFavorite = favorites?.map((rest) => rest.id).includes(parseInt(id));
+
+  const setFav = () => {
+    console.log("hola");
+    !isFavorite ? dispatch(addFav(id)) : dispatch(deleteFav(id));
+  };
 
   useEffect(() => {
     dispatch(fetchRestSpace(id));
@@ -39,7 +48,10 @@ export default function RestSpace() {
               ></img>
             </span>
             <div>
-              <h1>{restaurant.name}</h1>
+              <div className="rest-header">
+                <h1>{restaurant.name}</h1>{" "}
+                <button onClick={setFav}>{isFavorite ? "♥" : "♡"}</button>
+              </div>
               <h2>
                 {restaurant.address} {restaurant.city} {restaurant.country}
                 <br />
@@ -51,11 +63,6 @@ export default function RestSpace() {
                   Mira su pagina web
                 </a>
               </h2>
-              <div>
-                {restaurant.categories?.map((category, index) => (
-                  <h3 key={index}>{category.cuisine}</h3>
-                ))}
-              </div>
             </div>
           </div>
         </div>
