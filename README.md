@@ -16,16 +16,16 @@ Este Pechito Comer Peruano is a full stack app where you can search your favorit
 
 - A **Explore Restaurants** page where you can look your favorite peruvian restaurant on a map and in any city.
 
-- An **Restaurant Space** page where users can see the Space of the restaurants, leave their reviews and their photos.
+- An **Restaurant Space** page where users can see the Space of the restaurants, leave their reviews, photos, and save them to your favorites.
 
 - A **Explore Countries** page where users can share their photos of their home peruvian cooking all around the world.
 
-- A **Mi Account** page where users can see their photos and deleted them if it is needed.
+- A **Mi Account** page where users can see their photos and favorite restaurants. Delete them if it is needed.
 
 
 # Goals for this project:
 Demonstrate the main digital skills I've learned at the Codaisseur Academy.
-Build a full-stack web app from scratch into a working version within a two weeks. Making it Mobile responsive.
+Build a full-stack web app from scratch into a working version within two weeks. Making it Mobile responsive.
 Practice planning with user-stories, wireframes, datamodels, a kanban projectboard and git version control.
 Extend my coding knowledge and try out new technologies. I chose to use this opportunity to many to many relations and using the map as a main feature.
 
